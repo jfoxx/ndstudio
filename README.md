@@ -1,6 +1,10 @@
 # Your Project's Title...
 Your project's description...
 
+## NDS Design System Framework
+
+This project includes a [National Design Studio](https://ndstudio.gov/) (NDS) design system framework: shared blocks (gov-banner, hero, cards, columns, faq, header, footer) and CSS tokens for consistent government site styling. See [DESIGN.md](DESIGN.md) for block usage, tokens, and how to add the gov banner and NDS footer credit. A demo page is in `drafts/nds-demo.plain.html`; run with `npx -y @adobe/aem-cli up --no-open --forward-browser-logs --html-folder drafts` and open `/drafts/nds-demo`.
+
 ## Environments
 - Preview: https://main--{repo}--{owner}.aem.page/
 - Live: https://main--{repo}--{owner}.aem.live/

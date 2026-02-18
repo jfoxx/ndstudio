@@ -1,0 +1,30 @@
+/* Gov banner: full-width strip using NDS tokens (block-scoped per Edge Delivery guidelines) */
+main .gov-banner {
+  width: 100%;
+  background-color: var(--nds-banner-bg);
+  color: var(--nds-banner-text);
+  padding: var(--nds-banner-padding-y) var(--nds-banner-padding-x);
+  font-size: var(--nds-banner-font-size);
+  box-sizing: border-box;
+}
+
+main .gov-banner .gov-banner-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+main .gov-banner .gov-banner-line {
+  margin: 0;
+  line-height: 1.4;
+}
+
+main .gov-banner .gov-banner-line + .gov-banner-line {
+  margin-top: 4px;
+}
+
+@media (width >= 900px) {
+  main .gov-banner .gov-banner-inner {
+    padding: 0 32px;
+  }
+}

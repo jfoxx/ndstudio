@@ -13,6 +13,23 @@ footer .footer p {
   margin: 0;
 }
 
+/* NDS footer credit: "Designed in D.C. by National Design Studio" */
+footer .footer .footer-credit,
+footer .footer a[href*="ndstudio"] {
+  color: var(--nds-footer-credit-color);
+  font-size: var(--nds-footer-credit-font-size);
+}
+
+footer .footer .footer-credit a:any-link,
+footer .footer a[href*="ndstudio"]:any-link {
+  color: var(--nds-footer-credit-color);
+}
+
+footer .footer .footer-credit a:hover,
+footer .footer a[href*="ndstudio"]:hover {
+  text-decoration: underline;
+}
+
 @media (width >= 900px) {
   footer .footer > div {
     padding: 40px 32px 24px;

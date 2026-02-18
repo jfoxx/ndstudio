@@ -1,22 +1,23 @@
-.hero-container .hero-wrapper {
+/* Block-scoped per Edge Delivery guidelines */
+main .hero-container .hero-wrapper {
   max-width: unset;
   padding: 0;
 }
 
-.hero {
+main .hero {
   position: relative;
   padding: 40px 24px;
   min-height: 300px;
 }
 
-.hero h1 {
+main .hero h1 {
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
   color: var(--background-color);
 }
 
-.hero picture {
+main .hero picture {
   position: absolute;
   z-index: -1;
   inset: 0;
@@ -24,14 +25,33 @@
   box-sizing: border-box;
 }
 
-.hero img {
+main .hero img {
   object-fit: cover;
   width: 100%;
   height: 100%;
 }
 
+/* NDS overlay variant: dark gradient over image for text legibility */
+main .hero.nds-overlay {
+  position: relative;
+}
+
+main .hero.nds-overlay::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--nds-hero-overlay-gradient);
+  pointer-events: none;
+  z-index: 0;
+}
+
+main .hero.nds-overlay h1 {
+  position: relative;
+  z-index: 1;
+}
+
 @media (width >= 900px) {
-  .hero {
+  main .hero {
     padding: 40px 32px;
   }
 }

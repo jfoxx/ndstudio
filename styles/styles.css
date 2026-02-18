@@ -38,6 +38,26 @@
 
   /* nav height */
   --nav-height: 64px;
+
+  /*
+   * NDS (National Design Studio) design tokens.
+   * Override these in styles.css or lazy-styles.css to theme per site (e.g. accent, banner).
+   */
+  --nds-banner-bg: #1b1b1b;
+  --nds-banner-text: #fff;
+  --nds-banner-font-size: 12px;
+  --nds-banner-padding-y: 8px;
+  --nds-banner-padding-x: 16px;
+  --nds-hero-overlay: rgb(0 0 0 / 35%);
+  --nds-hero-overlay-gradient: linear-gradient(to bottom, rgb(0 0 0 / 20%), rgb(0 0 0 / 50%));
+  --nds-step-label-color: var(--dark-color);
+  --nds-step-label-font-size: var(--body-font-size-xs);
+  --nds-step-number-bg: var(--text-color);
+  --nds-step-number-color: var(--background-color);
+  --nds-faq-border: 1px solid #e0e0e0;
+  --nds-faq-focus-ring: 2px solid var(--link-color);
+  --nds-footer-credit-color: var(--dark-color);
+  --nds-footer-credit-font-size: var(--body-font-size-xs);
 }
 
 /* fallback fonts */
