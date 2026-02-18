@@ -6,7 +6,7 @@ This project includes a design system framework aligned with sites built by the 
 
 | Block | Purpose |
 |-------|--------|
-| **gov-banner** | Optional government/initiative strip (e.g. "AN OFFICIAL WEBSITE OF THE UNITED STATES GOVERNMENT", "A National Design Studio Initiative"). |
+| **gov-banner** | Government/initiative strip auto-added at the top of every page (no authoring required). |
 | **hero** | Large headline with optional full-bleed image; use variant `nds-overlay` for a dark gradient over the image. |
 | **cards** | Grid of cards; use variant `steps` for numbered step cards. |
 | **columns** | Multi-column layout for benefits or paths. |
@@ -14,14 +14,15 @@ This project includes a design system framework aligned with sites built by the 
 | **header** | Site navigation (fragment-based). |
 | **footer** | Site footer (fragment-based); include the NDS credit line and link. |
 
-## Adding the gov banner
+## Gov banner (auto-created)
 
-1. Add a section at the top of the page (or the first section in main).
-2. Add a block with name **Gov Banner** (class `gov-banner`).
-3. Row 1: primary line (e.g. "AN OFFICIAL WEBSITE OF THE UNITED STATES GOVERNMENT").
-4. Row 2 (optional): secondary line (e.g. "A National Design Studio Initiative").
+The gov banner is **automatically created and prepended** as the first section of every page. Authors do not need to add it.
 
-Placement: for visual prominence, use the first section in main. To show the banner above the header, you would need to inject it via metadata and custom logic (not provided by default).
+**Default text:**
+- Line 1: "AN OFFICIAL WEBSITE OF THE UNITED STATES GOVERNMENT"
+- Line 2: "A National Design Studio Initiative"
+
+**Optional overrides** (page or template metadata): set `gov-banner-line1` and/or `gov-banner-line2` to customize the text. If an authored gov-banner block already exists on the page, the auto-block is skipped (no duplicate).
 
 ## NDS footer credit
 

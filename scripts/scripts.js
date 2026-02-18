@@ -1,5 +1,6 @@
 import {
   buildBlock,
+  getMetadata,
   loadHeader,
   loadFooter,
   decorateButtons,
@@ -12,6 +13,34 @@ import {
   loadSections,
   loadCSS,
 } from './aem.js';
+
+const GOV_BANNER_LINE1 = 'AN OFFICIAL WEBSITE OF THE UNITED STATES GOVERNMENT';
+const GOV_BANNER_LINE2 = 'A National Design Studio Initiative';
+
+/**
+ * Builds gov-banner block and prepends to main as the first section (no authoring required).
+ * Optional metadata: gov-banner-line1, gov-banner-line2 to override default text.
+ * @param {Element} main The container element
+ */
+function buildGovBannerBlock(main) {
+  if (main.querySelector('.gov-banner')) return;
+  const line1 = getMetadata('gov-banner-line1') || GOV_BANNER_LINE1;
+  const line2 = getMetadata('gov-banner-line2') || GOV_BANNER_LINE2;
+  const section = document.createElement('div');
+  const block = document.createElement('div');
+  block.className = 'gov-banner';
+  const row1 = document.createElement('div');
+  const cell1 = document.createElement('div');
+  cell1.textContent = line1;
+  row1.append(cell1);
+  const row2 = document.createElement('div');
+  const cell2 = document.createElement('div');
+  cell2.textContent = line2;
+  row2.append(cell2);
+  block.append(row1, row2);
+  section.append(block);
+  main.prepend(section);
+}
 
 /**
  * Builds hero block and prepends to main in a new section.
@@ -68,6 +97,7 @@ function buildAutoBlocks(main) {
       });
     }
 
+    buildGovBannerBlock(main);
     buildHeroBlock(main);
   } catch (error) {
     // eslint-disable-next-line no-console
